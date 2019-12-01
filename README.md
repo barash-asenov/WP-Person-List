@@ -1,24 +1,6 @@
 # Person Lister Plugin (for Inpsyde)
 
 
-<!-- TOC -->
-
-- [WP Reactivate](#wp-reactivate)
-    - [Setup and installation](#setup-and-installation)
-    - [Usage](#usage)
-    - [Quick Start](#quick-start)
-        - [Introduction](#introduction)
-        - [Using the Shortcode](#using-the-shortcode)
-        - [Using the Widget](#using-the-widget)
-        - [Using REST Controllers](#using-rest-controllers)
-        - [Using the Settings Page](#using-the-settings-page)
-        - [Using fetchWP](#using-fetchwp)
-    - [Technologies](#technologies)
-    - [Tutorials](#tutorials)
-    - [Credits](#credits)
-
-<!-- /TOC -->
-
 ## Setup and installation
 * **Install [Node 8.12.0 LTS or greater](https://nodejs.org)**
 * **Install [Yarn](https://yarnpkg.com/en/docs/install)** (Or use npm if you prefer)
@@ -37,7 +19,7 @@ simple React & Wordpress REST API patterns and [Create Guten Blocks](https://git
 used for pattern for creating guten blocks.
 
 *webpack.config.js*
-```javascript =6
+```javascript
 entry: {
    'js/blocks': path.resolve(__dirname, 'app/blocks.js'),
    'js/personslist': path.resolve(__dirname, 'app/personslist.js')
@@ -50,14 +32,14 @@ Bundling personslist for front-end jsx showing. Used dynamic blocks. Save functi
 
 
 *includes/Block.php*
-```php =81
+```php
 wp_register_style( 'person_block_style', 'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css' );
 ```
 
 Semantic UI have been used for UI framework. It works great with React and easy to make custom
 user interfaces.
 
-```php =81
+```php
 register_block_type(
 	'wrp-person-list/person-container', array(
 		// Enqueue blocks.build.js in the editor only.
