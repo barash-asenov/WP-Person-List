@@ -1,13 +1,12 @@
 const path = require('path');
 
 module.exports = (env, argv) => {
-  let production = argv.mode === 'production'
+  let production = argv.mode === 'production';
 
   return {
     entry: {
-      'js/admin': path.resolve(__dirname, 'app/admin.js'),
-      'js/shortcode': path.resolve(__dirname, 'app/shortcode.js'),
-      'js/widget': path.resolve(__dirname, 'app/widget.js'),
+      'js/blocks': path.resolve(__dirname, 'app/blocks.js'),
+      'js/personslist': path.resolve(__dirname, 'app/personslist.js')
     },
 
     output: {
@@ -16,11 +15,11 @@ module.exports = (env, argv) => {
     },
 
     devtool: production ? '' : 'source-map',
-  
+
     resolve: {
       extensions: [".js", ".jsx", ".json"],
     },
-  
+
     module: {
       rules: [
         {
