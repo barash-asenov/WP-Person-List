@@ -1,4 +1,4 @@
-# Person Lister Plugin (for Inpsyde)
+# Person Lister Plugin
 
 
 ## Setup and installation
